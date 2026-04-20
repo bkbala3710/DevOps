@@ -3,3 +3,4 @@ apt install stress
 stress --cpu 2 --timeout 60
 
 2) sudo systemctl status nginx
+3) Dockerfile - Jenkinsfile =⇒ Case sensitive
