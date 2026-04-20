@@ -103,5 +103,25 @@ docker run -itd --name cont2 --network host httpd
 3. none → No network access (used for secure/test cases).
 docker run -itd --name cont3 --network none httpd
 
+------------------------------------------------------------------------------------------------
+Docker installation - amazon linux
+------------------------------------------------------------------------------------------------
+sudo su - root
+yum install docker
+sudo systemctl status docker
+sudo systemctl start docker
+docker images
+docker run -itd -p 8080:80 httpd
+docker ps
+http://54.179.209.77:8080/
+docker exec -it 60c /bin/bash
+cd htdocs
+docker cp index.html 60c:/usr/local/apache2/htdocs/
+------------------------------------------------------------------------------------------------
+Docker installation - ubuntu
+------------------------------------------------------------------------------------------------
+sudo su - root
+apt-get update
+apt install docker.io
 
 
