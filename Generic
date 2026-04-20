@@ -1,3 +1,5 @@
+https://www.notion.so/Repos-LWN-Links-2e5a0bd28808800182f0d9acd3c131d1
+
 1) Stress cmd
 apt install stress
 stress --cpu 2 --timeout 60
