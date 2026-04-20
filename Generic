@@ -6,3 +6,6 @@ stress --cpu 2 --timeout 60
 3) Dockerfile - Jenkinsfile =⇒ Case sensitive
 4) Buildspec.yml - can be renamed and give appropriate to map it
 5) Appspec.yml - can't be renamed
+
+6) Errors faced
+https://www.linkedin.com/posts/bala3710_devops-jenkins-terraform-activity-7438997768834117632-u6Q9?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC8MozIBQNvp1MVCqErtCs--xWyg-4nTYAY
