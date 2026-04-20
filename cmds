@@ -28,10 +28,12 @@ docker save -o ./mydockerimage.tar myimage:v1
 scp -i ~/downloads/my-privatekey.pem ./mydockeriamge.tar ec2-user@3.110.12.45:/home/ec2-user/
 docker load -i mydockerimage.tar
 -----------------------------------------------------------------------
-Bind Mount
+1. Bind Mount
 docker run -itd -p "9000:80" -v /opt/www:usr/local/apache2/htdocs bkbala3710/newimage:v1
-Dedicated volume
+2. Dedicated volume
 docker volume ls
 docker volume create my-vol
-docker volume -itd 
+docker run -itd -p 9090:80 --mount source=my-vol, target=/usr/local/apache2/htdocs bkbala3710/newimage:v1
+3. Temp mount - Temporary / Anonymous Volume
+docker run -itd -p 8085:80 -v /usr/local/apache2/htdocs bkbala3710/newimage:v1 
 
