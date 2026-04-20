@@ -125,3 +125,12 @@ Docker installation - ubuntu
 sudo su - root
 apt-get update
 apt install docker.io
+
+------------------------------------------------------------------------------------------------
+ENV - Build & RUN time
+------------------------------------------------------------------------------------------------
+ENV is used to define environment variables that are available inside the container at runtime. 
+It is mainly used for configuration like ports, URLs, credentials, etc.
+
+ENV APP_PORT=8080
+ENV DB_HOST=localhost
