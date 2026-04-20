@@ -34,6 +34,8 @@ Share docker image without internet
 docker save -o ./mydockerimage.tar myimage:v1
 scp -i ~/downloads/my-privatekey.pem ./mydockeriamge.tar ec2-user@3.110.12.45:/home/ec2-user/
 docker load -i mydockerimage.tar
+
+ssh -i "20112025.pem" ec2-user@10.0.2.217
 ------------------------------------------------------------------------------------------------
 Volumes
 ------------------------------------------------------------------------------------------------
