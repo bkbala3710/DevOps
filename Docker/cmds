@@ -134,3 +134,25 @@ It is mainly used for configuration like ports, URLs, credentials, etc.
 
 ENV APP_PORT=8080
 ENV DB_HOST=localhost
+
+echo $APP_PORT
+
+------------------------------------------------------------------------------------------------
+ARG - Build time
+------------------------------------------------------------------------------------------------
+ARG is used to pass values during image build time. 
+It is not available when the container is running. 
+It is mainly used for versions and build configs.
+
+ARG VERSION=1.0
+FROM node:$VERSION
+
+docker build --build-arg VERSION=18 -t myapp .
+
+------------------------------------------------------------------------------------------------
+ARG - RUN time
+------------------------------------------------------------------------------------------------
+USER is used to run the container with non-root privileges for security purposes.
+
+RUN useradd -m appuser
+USER appuser
