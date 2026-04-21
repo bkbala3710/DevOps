@@ -1,0 +1,12 @@
+kubectl get pods
+kubectl describe pod <pod-name>
+kubectl logs <pod-name>
+kubectl logs <pod-name> -c <container-name>
+---
+0/3 nodes available: insufficient CPU
+node(s) didn't match node selector
+taints and tolerations mismatch
+persistentvolumeclaim is not bound
+---
+kubectl get nodes
+kubectl describe pod <pod-name>
