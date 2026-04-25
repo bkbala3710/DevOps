@@ -19,3 +19,5 @@ ansible all -i slaves.txt -m copy -a "src=./slaves.txt dest=/tmp/slaves.txt" -b
    --tags black
    --skip-tags yellow
 4) --syntax-check
+5) shell: /usr/bin/date
+   register: abc
