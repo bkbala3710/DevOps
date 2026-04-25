@@ -52,3 +52,8 @@ local_action: ansible.builtin.command touch xyz.txt
 
 14) serial fork async & poll
 https://www.linkedin.com/posts/bala3710_ansible-devops-automation-activity-7432483755384197121-qipZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC8MozIBQNvp1MVCqErtCs--xWyg-4nTYAY
+
+15) roles, vault, encrypt
+ansible-galaxy init apache
+sudo yum install tree -y
+tree apache/
