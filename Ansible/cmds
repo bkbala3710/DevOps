@@ -60,4 +60,5 @@ tree apache/
 
 16) vault
 ansible-vault encrypt vault-pass.yml
+ansible-vault view vault-pass.yml
 ansible-vault decrypt vault-pass.yml
