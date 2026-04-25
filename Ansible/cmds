@@ -44,3 +44,6 @@ notify & handlers
 
 11)
 jinja2
+
+12)
+ansible-playbook -i inventory.txt playbook_name.yaml
