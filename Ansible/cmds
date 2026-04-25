@@ -63,3 +63,6 @@ tree apache/
 ansible-vault encrypt vault-pass.yml
 ansible-vault view vault-pass.yml
 ansible-vault decrypt vault-pass.yml
+
+17) Tomcat install
+18) Jenkins - lineinfile 
