@@ -1,7 +1,5 @@
 https://github.com/Iam-mithran/LWM-Ansible
 
-https://www.linkedin.com/posts/bala3710_ansible-devops-automation-activity-7432483755384197121-qipZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC8MozIBQNvp1MVCqErtCs--xWyg-4nTYAY
-
 ansible all -i slaves.txt -m ping
 ansible all -i slaves.txt -a "uname -a"
 ansible all -i slaves.txt -a "uptime"
@@ -47,3 +45,10 @@ jinja2
 
 12)
 ansible-playbook -i inventory.txt playbook_name.yaml
+
+13)
+delegate_to: 10.0.0.1
+local_action: ansible.builtin.command touch xyz.txt
+
+14) serial fork async & poll
+https://www.linkedin.com/posts/bala3710_ansible-devops-automation-activity-7432483755384197121-qipZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC8MozIBQNvp1MVCqErtCs--xWyg-4nTYAY
