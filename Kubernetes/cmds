@@ -2,6 +2,14 @@ kubectl get pods
 kubectl describe pod <pod-name>
 kubectl logs <pod-name>
 kubectl logs <pod-name> -c <container-name>
+
+kubectl get namespace
+kubectl create namespace dev
+
+kubectl apply -f main.yaml
+kubectl get pods -n dev
+kubectl get pod -o wide
+
 ---
 0/3 nodes available: insufficient CPU
 node(s) didn't match node selector
