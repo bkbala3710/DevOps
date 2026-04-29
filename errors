@@ -5,7 +5,7 @@ Wrong env variable, missing configuration or secret.
 Application crash
 Wrong image / config
 Environment variables
-Liveness/Readiness probes - timings issue slow start
+Liveness/Readiness probes - timings issue slow start - initaildelayseconds
 
 
 2. ImagePullBackoff
