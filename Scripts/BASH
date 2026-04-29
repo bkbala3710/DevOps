@@ -18,3 +18,10 @@ ps -ef | grep java
 git pull origin main
 npm install
 pm2 restart app
+
+top            - CPU usage, memory usage
+df -h          - disk file system
+free -m        - RAM usage
+ps -ef         - Process status PID
+netstat -tulnp - network ports & services
+chmod          - change file permission
