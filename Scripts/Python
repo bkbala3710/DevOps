@@ -1,0 +1,13 @@
+1. Python with boto3 to automate AWS tasks like starting/stopping EC2 instances. 
+import boto3
+
+ec2 = boto3.client('ec2')
+ec2.start_instances(InstanceIds=['i-1234567890'])
+
+2. when I need more complex log parsing compared to grep. 
+with open("app.log") as f:
+    for line in f:
+        if "ERROR" in line:
+            print(line)
+
+3. import smtplib
