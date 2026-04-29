@@ -28,3 +28,9 @@ no of replicas = no of pods
 no of nodes = no of pods (Daemon)
 
 kubectl get replicaset
+kubectl get deployment
+
+kubectl scale --replicas=7 deployment/lwm-deloyment
+kubectl set image deployment/lwm-deployment cont1=httpd
+
+kubectl get deployment lwm-deployment -o yaml > newfile.yaml
