@@ -1,1 +1,12 @@
+I used CloudWatch mainly for monitoring, alerting, and troubleshooting production issues.
+I worked with metrics, logs, alarms, and dashboards to ensure application availability and performance.
 
+1. Monitoring EC2 & Application Health
+I monitored EC2 CPU, memory (via custom metrics), disk usage
+Created CloudWatch Alarms:
+CPU > 70% → trigger alert
+Status check failed → immediate alert
+Integrated alarms with SNS to notify team
+
+I configured CloudWatch alarms for EC2 metrics and integrated them 
+with SNS to send alerts when thresholds were breached.
