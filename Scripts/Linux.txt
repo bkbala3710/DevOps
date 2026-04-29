@@ -1,0 +1,274 @@
+
+1. You're connected to an EC2 instance running a web server.
+The log file at /var/log/httpd/access.log contains lines like this:
+
+Task: Find how many unique IP addresses accessed the server.
+192.168.1.5 - - [19/Apr/2025:13:42:11 +0000] "GET /index.html HTTP/1.1" 200 532
+192.168.1.10 - - [19/Apr/2025:13:42:12 +0000] "POST /login HTTP/1.1" 401 134
+192.168.1.5 - - [19/Apr/2025:13:42:13 +0000] "GET /dashboard HTTP/1.1" 200 850
+192.168.1.15 - - [19/Apr/2025:13:42:15 +0000] "GET /about.html HTTP/1.1" 200 100
+192.168.1.10 - - [19/Apr/2025:13:42:16 +0000] "POST /login HTTP/1.1" 401 134
+
+awk '{print $1}' /var/log/httpd/access.log | sort | uniq | wc -l
+
+
+192.168.1.5
+192.168.1.10
+192.168.1.5
+192.168.1.15
+192.168.1.10
+
+192.168.1.10
+192.168.1.10
+192.168.1.15
+192.168.1.5
+192.168.1.5
+
+192.168.1.10
+192.168.1.15
+192.168.1.5
+
+3 - unique IP         
+=======================================================================================================
+2.You're on an EC2 instance where a script writes logs to /tmp/app.log. You want to:
+
+Search how many times the word "ERROR" appears in the file (case-insensitive)
+And also save those matching lines to a file called error_log.txt
+Which command(s) will you use?
+
+Connection successful
+ERROR: Failed to connect
+error: Timeout occurred
+Login successful
+ERROR: Invalid credentials
+
+grep -i "ERROR" /tmp/app.log | tee error_log.txt | wc -l
+
+
+ERROR: Failed to connect
+error: Timeout occurred
+ERROR: Invalid credentials
+
+3 - error
+=======================================================================================================
+3.You're on an EC2 instance and you want to:
+
+🔍 Find all .log files under /var/log/myapp/ folder that are larger than 5MB
+❌ Delete them to free up space
+📌 Which command will you use?
+
+(Hint: Think of find with size condition and rm)
+
+find /var/log/myapp/ -name "*.log" -size +5M -exec rm -f {} \;
+
+/var/log/myapp/app1.log (6MB) ✅
+/var/log/myapp/app2.log (3MB) ❌
+/var/log/myapp/app3.log (9MB) ✅
+
+find /var/log/myapp/	Start searching in this directory
+-name "*.log"	Match only files ending with .log
+-size +5M	Only files larger than 5MB
+-exec rm -f {} \;	For each matched file, run rm -f to delete it
+=======================================================================================================
+4. You’re on an EC2 instance and need to check the last 10 lines of a web server log and find out how many times the word ‘error’ appears."
+tail -n 10 /var/log/httpd/access.log | grep -i "error" | wc -l
+=======================================================================================================
+find /home/ec2-user/ -name "*.docx" -user bala
+find /home/ec2-user/ -name "*.docx"
+find /home/ec2-user -name "daily report"
+find /home/ec2-user -name "daily*report"         - dailyuatreport
+find /home/ec2-user -iname "daily report"        - case insensitive
+ls -l (permission, owner, size, modified time)    /     ls -lrt
+cd .
+cd .. (parent directory)
+cd ~ (home)
+cd - (previous directory)
+ls -a
+ls -la (or) ls -al
+ls -R
+ls -r
+ls -t
+file abc.txt
+The file abc.txt command will tell you what kind of data is stored in abc.txt. Here are a few examples of possible outputs:
+	📄 abc.txt: ASCII text → it's a plain text file
+	🧾 abc.txt: UTF-8 Unicode text → it's a Unicode text file
+	🧮 abc.txt: CSV text → it's structured like a CSV
+	⚠️ abc.txt: empty → file exists but has no content
+	❌ abc.txt: cannot open → file doesn’t exist or no permission
+	It doesn't just go by the file extension .txt, but actually inspects the file content.
+less abc.txt
+	q - comeout
+	g - up
+	G - down
+	/dog  - forward search
+	?dog  - backward search
+	h - help
+cp abc.txt newfolder/subfolder/    - copy
+cp   *.txt newfolder/subfolder/    - copy all txt file from directory
+truncate -s 0 file.txt  - Empty a file without deleting it
+--------------------------------------------------------------------------------
+#######Starting##########
+pwd
+date
+whoami
+sudo su - root
+sudo su - sudo su: This allows you to switch to the superuser (root) account.
+	Exactly! If you're logged in as root, there's no need to use sudo before running any commands. 
+	This is because the root user already has superuser privileges by default.
+cp abc.txt /newfolder/
+mv abc.txt dfg.txt
+mv abc.txt /videos/today/
+cp -r myfolder/ /newfolder/               - copy myfolder into newfolder
+cp -r myfolder/* /newfolder/              - copy all files into newfolder
+
+cp -i myfolder/abc.txt /newfolder/abc.txt   - if conflicts comes ask confirmation (interactive mode i)
+mv -b --suffix=.bak abc.txt /videos/today/  - if conflicts comes back up create (/videos/today/abc.txt.bak)
+
+man ls			- brief
+whatis ls		- short
+alias foobar = "ls -la"
+unalias foobar
+exit 					- logout
+
+printenv
+export name=bala
+unset name
+------------------------------------------------------------------------------------------------------------------------------------------------
+echo "hello world"
+echo "hello world" > peanut.txt    - replace
+echo "hello world" >> peanut.txt   - append
+cat < peanut.txt > sample.txt
+	std input  - 0
+	std output - 1
+	std error  - 2
+ls /fake/dir	2> out.txt       -  without 2 file create but nothing will be written
+ls /fake/dir    2> /dev/null     -  emptyness nothing will be written
+
+etc  - host specific configuration file
+ls -la /etc | less		 - pipe
+ls 1> listobj.txt                - saved to listobj.txt file
+ls | tee listobj.txt             - list as well as saved to listobj.txt file
+printenv   (or)  env
+	export name = "Actkin"               unset name
+echo "Hello $name"        	 - output will be Hello Actkin
+sudo su - root
+------------------------------------------------------------------------------------------------------------------------------------------------
+Regular expression: regex101 & lorem ipsum
+.     any character except new line enter
+[.]   to search dot
+\A    \AThe
+\Z    page.\Z   (case insensitive)
+
+\band\b         - and
+\Band\B	        - random
+\band\B         - andation
+\b[Aa]nd\B      - latin andliterature
+\d		- 0 to 9
+\D		- character & symbols
+\s		- space
+\S		- opposite to \s (except whitespace)
+\w		-(a-z,A-Z,0-9)
+\W		- opposite to \w (symbols, space trap it)
+^ 		- every start of line after enter hitted)
+$		- every end of line before enter hitted)
+*		- zero or more
++		- one or more
+?		- zero or one
+abc{3}		- abccc
+^[a-zA-Z0-9]+[@a-zA-Z]+[.][a-zA-Z]+$ - email id in a paragraph  abc@gmail.com  - old
+
+^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+| Part                | Meaning                                                     |
+| ------------------- | ----------------------------------------------------------- |
+| `^`                 | Start of string                                             |
+| `[a-zA-Z0-9._%+-]+` | Local part: allows letters, digits, `.`, `_`, `%`, `+`, `-` |
+| `@`                 | Must have exactly one `@` symbol                            |
+| `[a-zA-Z0-9.-]+`    | Domain part (e.g., `gmail`, `yahoo.co.in`)                  |
+| `\.`                | A literal dot                                               |
+| `[a-zA-Z]{2,}`      | TLD (e.g., `com`, `in`, `org`) – at least 2 letters         |
+| `$`                 | End of string                                               |
+
+^[a-z]+@[a-z]+\.[a-z]+$
+example.com
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+grep "Mithran" Sample.txt
+grep -i "Mithran" Sample.txt 			- case insensitive
+grep -l "Mithran" /home/ubuntu/*.txt
+grep -l "Mithran" Sample1.txt Sample2.txt Sample3.txt
+grep -i -l "Mithran" Sample1.txt Sample2.txt Sample3.txt
+grep -w "Mithran" Sample.txt 				- dedicated word Mithran alone (w)
+grep -i -w -n						- line number (n)
+grep "[A-Z]*" Sample.txt
+------------------------------------------------------------------------------------------------------------------------------------------------
+sed 's/is/IS/g' Sample.txt
+------------------------------------------------------------------------------------------------------------------------------------------------
+awk '{print}' employee.txt
+awk '{print $1}' employee.txt
+awk '{print $1, $4}' employee.txt
+awk '/sales/{print $1, $4}' employee.txt
+------------------------------------------------------------------------------------------------------------------------------------------------
+tail /var/log/syslog
+head /var/log/syslog
+tail -n 3 /var/log/syslog
+tail -f (live logs)
+head -n 45 /var/log/syslog | tail -n 10                    - (line 35 to 45)
+------------------------------------------------------------------------------------------------------------------------------------------------
+Vi sample.txt or Vim sample.txt
+:w - save without exiting
+:q - Quit (fails if not saved)
+:q! - Quit without saving
+:wq or zz - save and exit
+
+:%d - delete all
+:2d - 2line delete from where the cursor is
+------------------------------------------------------------------------------------------------------------------------------------------------
+sort new.txt
+sort -r new.txt
+ls -l | sort				- based on file size
+uniq new2.txt
+uniq -c new2.txt 			- count with uniq
+uniq -d new2.txt 			- duplicates
+sort new2.txt | uniq -c
+------------------------------------------------------------------------------------------------------------------------------------------------
+wc -l new2.txt - line
+wc -c new2.txt - byte
+wc -w new2.txt - word
+------------------------------------------------------------------------------------------------------------------------------------------------
+#! /bin/bash
+chmod +x main.sh
+
+sh main.sh    or  ./main.sh  		- to run a file
+echo "hello world"
+shell script - to execute multiple commands in a file.
+
+#system prefined variable, #local variable, #environment variable
+$HOME
+$USER
+$PWD
+
+$*   $@  - all args are Mithran 26 88   - in a single line
+$#       - no of arguments
+
+echo $  -  127   - error code - status of last executed commands
+echo $  -  0     - success
+
+$$ -  process number of curren shell
+$! -  process number of last background command
+------------------------------------------------------------------------------------------------------------------------------------------------
+    
+[-z$a] - size of string is zero - true 1
+[-n$a] - size of string not zero length -  true 1
+[$a]   - string there or not - empty - false - 0
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
