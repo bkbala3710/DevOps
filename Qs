@@ -37,3 +37,5 @@ Configure Auto Scaling Group
 Store data in RDS Multi-AZ
 Use Route 53 health checks
 Static content → S3 + CloudFront
+
+5. https://chatgpt.com/c/69f1fd3d-784c-8323-b355-f1e3fed24ac8
