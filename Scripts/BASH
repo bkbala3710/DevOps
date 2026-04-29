@@ -7,6 +7,9 @@ df -h | grep "/dev/xvda1"
 3. Backup
 tar -czvf backup.tar.gz /data
 
+3.1 Restore
+tar -xzf backup/backup_29042025_pre_daily_backup.tar.gz -c /home/ec2user/restore
+
 4. to check running processes and troubleshoot application issues.
 ps -ef | grep java
 
