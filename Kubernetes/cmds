@@ -10,6 +10,9 @@ kubectl apply -f main.yaml
 kubectl get pods -n dev
 kubectl get pod -o wide
 
+kubectl get pods --all-namespaces
+kubectl delete pod firstpod secondpod
+
 ---
 0/3 nodes available: insufficient CPU
 node(s) didn't match node selector
@@ -18,4 +21,10 @@ persistentvolumeclaim is not bound
 ---
 https://docs.google.com/document/d/10bEQRvdzM7Sqc4Wzr4HFtibujmggmfW6U4iio0KoGus/edit?tab=t.0
 
-https://chatgpt.com/share/69e7b766-e1e8-8320-a8d9-2d342f218e27
+https://chatgpt.com/share/69e7b766-e1e8-8320-a8d9-2d342f218e27 - error debug steps
+---
+
+no of replicas = no of pods
+no of nodes = no of pods (Daemon)
+
+kubectl get replicaset
