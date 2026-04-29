@@ -34,3 +34,5 @@ kubectl scale --replicas=7 deployment/lwm-deloyment
 kubectl set image deployment/lwm-deployment cont1=httpd
 
 kubectl get deployment lwm-deployment -o yaml > newfile.yaml
+
+aws eks update-kubeconfig --name <cluster-name>
