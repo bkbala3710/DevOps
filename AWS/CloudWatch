@@ -1,8 +1,8 @@
-I used CloudWatch mainly for monitoring, alerting, and troubleshooting production issues.
-I worked with metrics, logs, alarms, and dashboards to ensure application availability and performance.
+CloudWatch mainly for monitoring, alerting, and troubleshooting production issues.
+worked with metrics, logs, alarms, and dashboards to ensure application availability and performance.
 
 1. Monitoring EC2 & Application Health
-I monitored EC2 CPU, memory (via custom metrics), disk usage
+Monitored EC2 CPU, memory (via custom metrics), disk usage
 Created CloudWatch Alarms:
 CPU > 70% → trigger alert
 Status check failed → immediate alert
@@ -10,3 +10,33 @@ Integrated alarms with SNS to notify team
 
 I configured CloudWatch alarms for EC2 metrics and integrated them 
 with SNS to send alerts when thresholds were breached.
+
+2. Log Monitoring & Debugging
+Enabled CloudWatch Logs Agent
+Pushed:
+Application logs
+Nginx/Apache logs
+Used Log Insights to debug issues
+
+Production issue where the application was failing intermittently. 
+I used CloudWatch Logs Insights to filter error patterns and identified a 
+database connection timeout issue.
+
+3. Auto Scaling Integration
+Connected CloudWatch alarms to Auto Scaling Group
+Example:
+CPU > 70% → scale out
+CPU < 30% → scale in
+CloudWatch metrics to trigger scaling policies, 
+ensuring the application handled traffic automatically
+
+4. Custom Metrics
+
+Application-specific metrics
+# CPU Utilization
+# StatusCheckfailed_Instance
+# StatusCheckfailed_System
+# Memory utilization
+# NetworkIn /NetworkOut
+# Disk - EBS
+# TargetResponseTime (Latency)
