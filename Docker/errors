@@ -7,3 +7,7 @@ I faced this when another container was already using the same port. I checked t
 docker ps
 docker stop <container_id>
 docker run -itd -p 8081:80 nginx
+
+8081 - custom port
+
+EXPOSE 80 in dockerfile
