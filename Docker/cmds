@@ -175,7 +175,7 @@ ADD https://maven.org .
 COPY JavaCode
 RUN mvn clean install
 ADD https://tomcat.org .
-RUN CP ./app/war ./tomcat/webapps
+RUN cp ./app/war ./tomcat/webapps
 ENTRYPOINT [”sh”,”./tomcat/bin/startup.sh”]
 EXPOSE 8080
 ------------------------------------------------------------------------------------------------
