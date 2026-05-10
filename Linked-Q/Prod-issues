@@ -4,3 +4,5 @@ Microservice (secret) - https://chatgpt.com/share/6a004a84-f0c0-8324-bcca-a73ebd
 Monolithic - 
 REVOKE ALL PRIVILEGES ON orders FROM app_user;
 GRANT SELECT, INSERT, UPDATE ON orders TO app_user;
+
+kubectl rollout restart deployment app-deployment
