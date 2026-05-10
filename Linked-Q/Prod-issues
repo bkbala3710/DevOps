@@ -1,5 +1,7 @@
 Microservice (secret) - https://chatgpt.com/share/6a004a84-f0c0-8324-bcca-a73ebdf0a57c
 
+*** Outage - https://chatgpt.com/share/6a008e55-8534-8323-a1f7-1e2ff0c1a332
+
 kubectl rollout restart deployment app-deployment
 
 Monolithic - 
