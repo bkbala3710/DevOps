@@ -1,1 +1,19 @@
+https://chatgpt.com/c/6a004bee-bf0c-8320-b9fd-3dec2fbc16ac
 
+JAVA Code
+Maven & Gradle
+1. Developer writes .java files, Build stage converts source code into runnable package:
+.java source code
+      ↓
+Compile
+      ↓
+.class files
+      ↓
+Package
+      ↓
+JAR/WAR artifact
+
+“In Java applications, build stage is usually handled using Maven or Gradle. During build,
+source code is compiled into bytecode, unit tests are executed, and deployable artifacts like JAR or WAR files are generated. 
+Common commands are mvn clean package or mvn clean install. These artifacts are later containerized using Docker and deployed 
+into Kubernetes or servers.”
