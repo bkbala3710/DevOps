@@ -34,6 +34,9 @@ chmod          - change file permission
    rm -rf /path/to/folder/* - delete files inside the folder
    rm -ri /path/to/folder/* - delete files inside the folder - The -i option asks for confirmation before each deletion.
 
+8. awk '{print $1}' /var/log/httpd/access.log | sort | uniq | wc -l
+9. grep -i "ERROR" /tmp/app.log | tee error_log.txt | wc -l
+10. find /var/log/myapp/ -name "*.log" -size +5M -exec rm -f {} \;
 
 
 
