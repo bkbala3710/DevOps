@@ -17,3 +17,6 @@ JAR/WAR artifact
 source code is compiled into bytecode, unit tests are executed, and deployable artifacts like JAR or WAR files are generated. 
 Common commands are mvn clean package or mvn clean install. These artifacts are later containerized using Docker and deployed 
 into Kubernetes or servers.”
+
+
+Python code
